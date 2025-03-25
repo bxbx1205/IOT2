@@ -88,7 +88,7 @@ function App() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }}
                 >
-                    LSD Photo Gallery
+                    LSDs Photo Gallery
                 </motion.h1>
 
                 {/* Test upload button */}
