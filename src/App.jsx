@@ -38,8 +38,11 @@ function App() {
     };
 
     useEffect(() => {
-        loadPhotos();
-        const interval = setInterval(loadPhotos, 30000);
+        loadPhotos(); // Initial load
+        
+        // Changed from 30000 (30 seconds) to 10000 (10 seconds)
+        const interval = setInterval(loadPhotos, 10000);
+        
         return () => clearInterval(interval);
     }, []);
 
@@ -88,7 +91,7 @@ function App() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }}
                 >
-                    LSDs Photo Gallery
+                    Dreamy Photo Gallery
                 </motion.h1>
 
                 {/* Test upload button */}
