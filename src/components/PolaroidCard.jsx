@@ -3,32 +3,11 @@ import { motion } from 'framer-motion';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-// Function to generate a random card width
-const getRandomWidth = () => {
-    const widths = [240, 250, 260];  // Similar but slightly different
-    return widths[Math.floor(Math.random() * widths.length)];
-};
-
-// Function to generate a random but not too extreme aspect ratio
-const getRandomAspectRatio = () => {
-    const ratios = [
-        { width: 10, height: 8 },
-        { width: 10, height: 7 },
-        { width: 9, height: 7 },
-        { width: 8, height: 9 },
-        { width: 7, height: 8 },
-        { width: 7, height: 10 },
-        { width: 8, height: 10 },
-        { width: 1, height: 1 },
-    ];
-    return ratios[Math.floor(Math.random() * ratios.length)];
-};
-
 const PolaroidCard = ({ photo }) => {
     const { url, timestamp } = photo;
-
-    const cardWidth = getRandomWidth();
-    const aspectRatio = getRandomAspectRatio();
+    
+    // Fixed width for all cards
+    const cardWidth = 250;
 
     return (
         <motion.div
@@ -48,7 +27,7 @@ const PolaroidCard = ({ photo }) => {
             <div
                 className="w-full overflow-hidden relative bg-gray-200"
                 style={{
-                    aspectRatio: `${aspectRatio.width} / ${aspectRatio.height}`,
+                    aspectRatio: '4 / 3', // Fixed 4:3 aspect ratio
                     position: 'relative',
                     marginBottom: '-3px',
                 }}
@@ -59,8 +38,8 @@ const PolaroidCard = ({ photo }) => {
                     effect="blur"
                     className="w-full h-full"
                     style={{
-                        objectFit: 'fill',//Zoom and crop as necessary
-                        objectPosition: 'center', // Center the image
+                        objectFit: 'cover', // Changed from 'fill' to 'cover' for better image display
+                        objectPosition: 'center',
                     }}
                 />
             </div>
