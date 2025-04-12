@@ -68,26 +68,26 @@ function App() {
 
     return (
         <motion.div
-            className="min-h-screen bg-gradient-to-br from-rose-100 to-teal-100 p-4 md:p-8 relative overflow-hidden"
+            className="min-h-screen bg-gradient-to-br from-rose-100 to-teal-100 p-3 sm:p-4 md:p-8 relative overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.75, ease: "easeInOut" } }}
             exit={{ opacity: 0 }}
         >
             {/* Background animations */}
             <motion.div
-                className="absolute top-0 left-0 w-48 h-48 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"
+                className="absolute top-0 left-0 w-24 sm:w-36 md:w-48 h-24 sm:h-36 md:h-48 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"
                 animate={{ x: [0, 50, 0, -50, 0], y: [0, 20, 0, -20, 0], scale: [1, 1.1, 1], rotate: [0, 10, 0, -10, 0] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
             />
             <motion.div
-                className="absolute bottom-0 right-0 w-48 h-48 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"
+                className="absolute bottom-0 right-0 w-24 sm:w-36 md:w-48 h-24 sm:h-36 md:h-48 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"
                 animate={{ x: [0, -50, 0, 50, 0], y: [0, -20, 0, 20, 0], scale: [1, 1.1, 1], rotate: [0, -10, 0, 10, 0] }}
                 transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
             />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <motion.h1
-                    className="text-4xl font-bold text-gray-700 text-center mb-8 drop-shadow-md"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-700 text-center mb-4 sm:mb-6 md:mb-8 drop-shadow-md"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }}
                 >
@@ -95,7 +95,7 @@ function App() {
                 </motion.h1>
 
                 {/* Test upload button */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-4 sm:mb-6 md:mb-8">
                     <input
                         type="file"
                         ref={fileInputRef}
@@ -106,7 +106,7 @@ function App() {
                     />
                     <button
                         onClick={() => fileInputRef.current.click()}
-                        className="bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-gray-700 hover:bg-gray-50"
+                        className="bg-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-gray-700 hover:bg-gray-50 text-sm sm:text-base"
                     >
                         Add Test Images
                     </button>
@@ -137,7 +137,7 @@ function App() {
 
                 {photos.length === 0 && !loading && !syncing && (
                     <motion.div
-                        className="text-center text-gray-400 mt-8 drop-shadow-sm"
+                        className="text-center text-gray-400 mt-6 sm:mt-8 drop-shadow-sm text-sm sm:text-base"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1, transition: { delay: 0.7, duration: 0.5 } }}
                     >
