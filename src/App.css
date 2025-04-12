@@ -1,13 +1,22 @@
 .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Default: at least 250px width */
-    gap: 16px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* For smaller screens */
+@media (max-width: 640px) {
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
   }
-  
-  /* Media query for mobile devices (up to 767px) */
-  @media (max-width: 767px) {
-      .photo-grid {
-          grid-template-columns: repeat(2, 1fr); /* Force 2 columns on mobile */
-      }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
+}
